@@ -11,10 +11,10 @@ resource "google_service_account" "cluster-svc" {
 }
 
 resource "google_project_service" "anthos-api" {
-  project = var.project_id
-  service = "anthos.googleapis.com"
+  project                    = var.project_id
+  service                    = "anthos.googleapis.com"
   disable_dependent_services = false
-  disable_on_destroy = true
+  disable_on_destroy         = true
 }
 
 module "gke" {
@@ -24,6 +24,7 @@ module "gke" {
   region                     = var.region
   zones                      = var.zones
   network                    = var.vpc_network
+  network_project_id         = var.vpc_network_project_id
   subnetwork                 = var.subnetwork
   ip_range_pods              = var.ip_range_pods
   ip_range_services          = var.ip_range_services

@@ -28,6 +28,10 @@ variable "node_initial_count" {
 }
 
 
+variable "vpc_network_project_id" {
+
+}
+
 variable "vpc_network" {
 
 }
