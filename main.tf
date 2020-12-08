@@ -10,6 +10,12 @@ resource "google_service_account" "cluster-svc" {
 
 }
 
+resource "google_project_service" "anthos-api" {
+  project = var.project_id
+  service = "anthos.googleapis.com"
+  disable_dependent_services = false
+  disable_on_destroy = true
+}
 
 module "gke" {
   source                     = "terraform-google-modules/kubernetes-engine/google//modules/private-cluster"
