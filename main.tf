@@ -10,9 +10,23 @@ resource "google_service_account" "cluster-svc" {
 
 }
 
+resource "google_project_iam_member" "gke-shared-vpc-user-iam" {
+  project = var.vpc_network_project_id
+  role = "roles/container.hostServiceAgentUser"
+  member = google_service_account.cluster-svc.email
+  
+}
+
 resource "google_project_service" "anthos-api" {
   project                    = var.project_id
   service                    = "anthos.googleapis.com"
+  disable_dependent_services = false
+  disable_on_destroy         = true
+}
+
+resource "google_project_service" "gke-api" {
+  project                    = var.project_id
+  service                    = "container.googleapis.com"
   disable_dependent_services = false
   disable_on_destroy         = true
 }
