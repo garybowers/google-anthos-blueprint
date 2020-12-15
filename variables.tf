@@ -56,4 +56,6 @@ variable "ip_range_services" {
 
 }
 
+variable "master_authorized_networks" {
 
+}
