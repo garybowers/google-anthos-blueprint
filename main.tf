@@ -39,7 +39,6 @@ module "gke" {
     {
       name               = var.nodepool_name 
       machine_type       = var.node_machine_type
-      node_locations     = var.zones 
       min_count          = var.node_min_count
       max_count          = var.node_max_count
       local_ssd_count    = 0
