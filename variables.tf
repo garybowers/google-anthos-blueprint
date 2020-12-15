@@ -11,6 +11,10 @@ variable "zones" {
 
 }
 
+variable "cluster_name" {
+
+}
+
 variable "nodepool_name" {
 
 }
