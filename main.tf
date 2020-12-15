@@ -35,6 +35,8 @@ module "gke" {
   enable_private_nodes       = true
   master_ipv4_cidr_block     = "10.0.0.0/28"
 
+  master_authorized_networks = ["0.0.0.0/0"]
+
   node_pools = [
     {
       name               = var.nodepool_name 
