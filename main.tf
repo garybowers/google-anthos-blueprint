@@ -50,7 +50,7 @@ module "gke" {
       auto_upgrade       = true
       service_account    = google_service_account.cluster-svc.email
       preemptible        = false
-      initial_node_count = var.node_initial_count ? var.node_initial_count : 1
+      initial_node_count = var.node_initial_count
     },
   ]
 
