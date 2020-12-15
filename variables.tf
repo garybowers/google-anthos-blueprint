@@ -8,7 +8,7 @@ variable "region" {
 }
 
 variable "zones" {
-
+ type = list(string)
 }
 
 variable "cluster_name" {
