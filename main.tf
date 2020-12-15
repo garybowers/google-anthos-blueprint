@@ -5,8 +5,8 @@ resource "random_id" "postfix" {
 
 resource "google_service_account" "cluster-svc" {
   project      = var.project_id
-  account_id   = "${var.cluster-name}-gke-${random_id.postfix.hex}"
-  display_name = "${var.cluster-name}-gke-${random_id.postfix.hex}"
+  account_id   = "${var.cluster_name}-gke-${random_id.postfix.hex}"
+  display_name = "${var.cluster_name}-gke-${random_id.postfix.hex}"
 
 }
 
