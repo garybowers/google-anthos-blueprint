@@ -8,7 +8,7 @@ variable "region" {
 }
 
 variable "zones" {
- type = list(string)
+  type = list(string)
 }
 
 variable "cluster_name" {
@@ -57,5 +57,5 @@ variable "ip_range_services" {
 }
 
 variable "master_authorized_networks" {
- type = list(string)
+  type = list(object({ cidr_block = string, display_name = string }))
 }
