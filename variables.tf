@@ -31,6 +31,10 @@ variable "node_initial_count" {
 
 }
 
+variable "node_machine_type" {
+
+}
+
 
 variable "vpc_network_project_id" {
 
