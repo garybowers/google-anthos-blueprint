@@ -11,7 +11,7 @@ variable "zones" {
 
 }
 
-variable "nodepool-name" {
+variable "nodepool_name" {
 
 }
 
